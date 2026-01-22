@@ -1,0 +1,87 @@
+boarding-app/
+├─ README.md
+├─ .gitignore
+├─ apps/
+│  ├─ web/
+│  │  ├─ public/
+│  │  │  ├─ favicon.ico              # (later) site icon
+│  │  │  └─ og.png                   # (later) share preview image
+│  │  ├─ src/
+│  │  │  ├─ assets/
+│  │  │  │  ├─ logo.svg              # (later) logo
+│  │  │  │  └─ placeholders/         # (later) default images
+│  │  │  ├─ css/
+│  │  │  │  ├─ base.css              # reset, typography, layout
+│  │  │  │  ├─ theme.css             # blue/yellow tokens + dark/light modes
+│  │  │  │  └─ components.css        # buttons, cards, modals, tables, badges
+│  │  │  ├─ js/
+│  │  │  │  ├─ main.js               # entry point: boot app + routing
+│  │  │  │  ├─ api.js                # wrapper around fetch / Supabase calls
+│  │  │  │  ├─ supabaseClient.js     # Supabase init client (anon key)
+│  │  │  │  ├─ ui/
+│  │  │  │  │  ├─ modal.js           # open/close modal
+│  │  │  │  │  ├─ toast.js           # toast notifications
+│  │  │  │  │  └─ form.js            # validations + helpers
+│  │  │  │  ├─ tenant/
+│  │  │  │  │  ├─ browse.js          # search + listing view
+│  │  │  │  │  ├─ applyModal.js      # apply modal logic (name/age/course)
+│  │  │  │  │  └─ status.js          # application status + warnings
+│  │  │  │  └─ owner/
+│  │  │  │     ├─ dashboard.js       # KPIs: occupancy, due, pending apps
+│  │  │  │     ├─ listings.js        # create/edit boarding house + rooms
+│  │  │  │     ├─ applications.js    # view apps, send appointment proposal
+│  │  │  │     └─ dues.js            # due list + mark paid/due/overdue
+│  │  │  └─ index.html               # main page (if Vite, this is in root)
+│  │  ├─ index.html                  # (Vite) entry html
+│  │  ├─ package.json                # (Vite) scripts: dev/build/preview
+│  │  └─ vite.config.js              # (optional) config
+│  │
+│  └─ api/
+│     ├─ src/
+│     │  ├─ server.js                # Express app bootstrap
+│     │  ├─ config/
+│     │  │  └─ env.js                # reads env vars safely
+│     │  ├─ db/
+│     │  │  ├─ index.js              # Supabase admin client (service key)
+│     │  │  └─ migrations/           # (optional) SQL scripts/version notes
+│     │  ├─ middleware/
+│     │  │  ├─ auth.js               # verifies Supabase JWT
+│     │  │  ├─ role.js               # role guard (TENANT/OWNER)
+│     │  │  └─ error.js              # centralized error handler
+│     │  ├─ modules/
+│     │  │  ├─ auth/
+│     │  │  │  ├─ auth.routes.js
+│     │  │  │  └─ auth.controller.js
+│     │  │  ├─ listings/
+│     │  │  │  ├─ listings.routes.js
+│     │  │  │  └─ listings.controller.js
+│     │  │  ├─ applications/
+│     │  │  │  ├─ applications.routes.js
+│     │  │  │  └─ applications.controller.js
+│     │  │  ├─ appointments/
+│     │  │  │  ├─ appointments.routes.js
+│     │  │  │  └─ appointments.controller.js
+│     │  │  ├─ tenancies/
+│     │  │  │  ├─ tenancies.routes.js
+│     │  │  │  └─ tenancies.controller.js
+│     │  │  └─ dues/
+│     │  │     ├─ dues.routes.js
+│     │  │     └─ dues.controller.js
+│     │  └─ utils/
+│     │     ├─ time.js               # date helpers (due logic)
+│     │     └─ validate.js           # input validation helpers
+│     ├─ package.json
+│     └─ .env.example
+│
+├─ packages/
+│  └─ shared/
+│     ├─ constants.js                # roles/status constants shared across apps
+│     └─ validators.js               # (later) shared validations
+│
+├─ docs/
+│  ├─ product.md                     # features, flows, MVP decisions
+│  └─ api.md                         # endpoints + payload notes
+│
+└─ .github/
+   └─ workflows/
+      └─ ci.yml                      # (later) build/lint on push to main
