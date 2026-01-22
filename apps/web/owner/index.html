@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Owner • Boarding App</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span> BoardingApp</div>
+    <nav class="row">
+      <a class="badge" href="../tenant/index.html">Tenant</a>
+      <a class="badge" href="../index.html">Home</a>
+      <span class="badge">Owner</span>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <p class="kicker">Owner / Housekeeper</p>
+    <h1 class="h1">Create your listing</h1>
+    <p class="sub">Title, description, price range, rooms (capacity + price per room), and photos.</p>
+
+    <section class="section card glow reveal" style="padding:16px;">
+      <div class="row">
+        <input class="input" id="title" placeholder="Title" style="max-width:360px">
+        <input class="input" id="area" placeholder="Area / Location" style="max-width:280px">
+        <input class="input" id="priceRange" placeholder="Price Range (per room)" style="max-width:260px">
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <input class="input" id="contact" placeholder="Contact (phone or Messenger link)" style="max-width:420px">
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <textarea class="textarea" id="description" placeholder="Description / rules / inclusions"></textarea>
+      </div>
+
+      <div class="section">
+        <div class="row">
+          <input class="input" id="roomName" placeholder="Room name" style="max-width:260px">
+          <input class="input" id="roomCap" type="number" min="1" placeholder="Capacity" style="max-width:160px">
+          <input class="input" id="roomPrice" placeholder="Price (e.g. 1500)" style="max-width:180px">
+          <button class="btn primary" id="addRoomBtn">Add room</button>
+        </div>
+        <div id="roomsWrap" class="grid" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="section">
+        <div class="row">
+          <input class="input" id="photos" type="file" accept="image/*" multiple>
+        </div>
+        <div id="photosWrap" class="grid" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <button class="btn yellow" id="saveListingBtn">Save Listing</button>
+        <button class="btn" id="resetBtn">Reset</button>
+        <span class="badge pulse" id="savedBadge" style="display:none;">Saved</span>
+      </div>
+
+      <div id="toast" class="toast"></div>
+    </section>
+
+    <section class="section card glow reveal" style="padding:16px;">
+      <h2 style="margin:0 0 10px;">Preview</h2>
+      <div id="previewWrap" class="grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="../src/js/owner/index.js"></script>
+</body>
+</html>

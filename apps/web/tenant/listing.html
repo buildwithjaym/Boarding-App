@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tenant • Listing</title>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/theme.css" />
+  <link rel="stylesheet" href="/src/css/components.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/tenant/index.html">
+      <span class="dot"></span>
+      <span>Back</span>
+    </a>
+
+    <div class="topActions">
+      <a class="chip tilt" href="/owner/dashboard.html">
+        <span class="chipText">Owner</span><span class="chipIcon">🏠</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="detail" class="card panel reveal"></section>
+
+    <section class="card panel reveal">
+      <div class="panelHead">
+        <div>
+          <h2 class="h2">Rooms</h2>
+          <p class="sub">Only rooms with available slots can be applied to.</p>
+        </div>
+        <div id="movedWarning" class="badge warn hidden">Already moved-in. Applying is blocked.</div>
+      </div>
+
+      <div id="rooms" class="rooms"></div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+  <section id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="card modalCard">
+      <button id="closeBtn" class="xBtn tilt" aria-label="Close">✕</button>
+      <h2 class="h2" id="modalTitle">Apply</h2>
+
+      <form id="applyForm" class="form">
+        <div class="row2">
+          <label class="field">
+            <span>Name</span>
+            <input class="input" name="name" required />
+          </label>
+          <label class="field">
+            <span>Age</span>
+            <input class="input" name="age" type="number" min="15" max="80" required />
+          </label>
+        </div>
+
+        <div class="row2">
+          <label class="field">
+            <span>Course</span>
+            <input class="input" name="course" required />
+          </label>
+          <label class="field">
+            <span>Year level</span>
+            <input class="input" name="year" placeholder="e.g., 2nd year" required />
+          </label>
+        </div>
+
+        <div class="row2">
+          <label class="field">
+            <span>Email</span>
+            <input class="input" name="email" type="email" required />
+          </label>
+          <label class="field">
+            <span>Phone</span>
+            <input class="input" name="phone" required />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Target move-in date</span>
+          <input class="input" name="moveInDate" type="date" required />
+        </label>
+
+        <label class="field">
+          <span>Message (optional)</span>
+          <textarea class="textarea" name="message" rows="3" placeholder="Anything the owner should know?"></textarea>
+        </label>
+
+        <div class="actions">
+          <button class="btn primary tilt" type="submit">Submit Application</button>
+          <button id="cancelBtn" class="btn ghost tilt" type="button">Cancel</button>
+        </div>
+      </form>
+
+      <div id="toast" class="toast" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <script type="module" src="/src/js/tenant/listing.js"></script>
+</body>
+</html>

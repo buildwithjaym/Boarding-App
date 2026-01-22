@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tenant • Boarding App</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span> BoardingApp</div>
+    <nav class="row">
+      <a class="badge" href="../owner/index.html">Owner</a>
+      <a class="badge" href="../index.html">Home</a>
+      <span class="badge">Tenant</span>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <p class="kicker">Tenant</p>
+    <h1 class="h1">Find a boarding house</h1>
+    <p class="sub">Only shows rooms with available slots.</p>
+
+    <section class="section card glow reveal" style="padding:16px;">
+      <div class="row">
+        <input class="input" id="q" placeholder="Search title or area..." style="max-width:420px;">
+        <span class="badge pulse" id="warn" style="display:none;"></span>
+      </div>
+
+      <div id="listingsGrid" class="grid" style="margin-top:12px;"></div>
+      <div id="toast" class="toast"></div>
+    </section>
+  </main>
+
+  <div class="modalOverlay" id="overlay" aria-hidden="true"></div>
+  <section class="modal" id="modal" aria-hidden="true" role="dialog">
+    <div class="card glow modalCard">
+      <button class="xBtn" id="closeBtn">✕</button>
+      <h2 style="margin:6px 0 10px;">Apply as Tenant</h2>
+      <p class="muted" id="applyFor" style="margin:0 0 12px;"></p>
+
+      <div class="row" style="gap:12px;">
+        <input class="input" id="name" placeholder="Name" style="flex:1">
+        <input class="input" id="age" type="number" min="16" placeholder="Age" style="max-width:140px">
+      </div>
+
+      <div class="row" style="margin-top:10px; gap:12px;">
+        <input class="input" id="course" placeholder="Course" style="flex:1">
+        <input class="input" id="year" placeholder="Year level" style="flex:1">
+      </div>
+
+      <div class="row" style="margin-top:10px; gap:12px;">
+        <input class="input" id="phone" placeholder="Phone" style="flex:1">
+        <input class="input" id="email" placeholder="Email" style="flex:1">
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <input class="input" id="movein" type="date" style="max-width:240px">
+      </div>
+
+      <div class="row" style="margin-top:10px;">
+        <textarea class="textarea" id="msg" placeholder="Message (optional)"></textarea>
+      </div>
+
+      <div class="row" style="margin-top:12px;">
+        <button class="btn yellow" id="submitBtn">Submit Application</button>
+        <span class="badge" id="sentBadge" style="display:none;">Sent</span>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="../src/js/tenant/index.js"></script>
+</body>
+</html>

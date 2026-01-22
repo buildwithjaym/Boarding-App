@@ -2,52 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Boarding App</title>
-  <link rel="stylesheet" href="/src/css/base.css" />
-  <link rel="stylesheet" href="/src/css/theme.css" />
-  <link rel="stylesheet" href="/src/css/components.css" />
 </head>
 <body>
-  <div class="bg">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-    <div class="grain"></div>
-  </div>
-
   <header class="topbar">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>Boarding App</span>
-    </div>
-    <div class="chip">
-      <span class="chipText">MVP</span>
-      <span class="chipIcon">⚡</span>
-    </div>
+    <div class="brand"><span class="dot"></span> BoardingApp</div>
+    <nav class="row">
+      <a class="badge" href="./tenant/index.html">Tenant</a>
+      <a class="badge" href="./owner/index.html">Owner</a>
+    </nav>
   </header>
 
   <main class="wrap">
-    <section class="card heroCard reveal">
-      <div class="sparkle"></div>
-      <p class="kicker">Futuristic cards + microanimations</p>
-      <h1 class="title">Find rooms. Apply fast. Manage tenants.</h1>
-      <p class="sub">
-        Tenant browses available rooms only. Owner posts listings with photos, rooms/capacity,
-        and manages applications + appointments + occupancy.
-      </p>
+    <p class="kicker">MVP</p>
+    <h1 class="h1">Boarding App</h1>
+    <p class="sub">Tenant: search & apply. Owner: create listing, rooms, photos.</p>
 
-      <div class="actions">
-        <a class="btn primary tilt" href="/tenant/index.html">
-          <span class="btnText">I’m a Tenant</span><span class="btnIcon">→</span>
-        </a>
-        <a class="btn secondary tilt" href="/owner/dashboard.html">
-          <span class="btnText">I’m an Owner</span><span class="btnIcon">→</span>
-        </a>
+    <section class="section card glow reveal" style="padding:16px;">
+      <div class="row">
+        <a class="btn yellow" href="./tenant/index.html">Open Tenant</a>
+        <a class="btn primary" href="./owner/index.html">Open Owner</a>
       </div>
+      <div id="toast" class="toast"></div>
     </section>
   </main>
 
-  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

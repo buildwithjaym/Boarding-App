@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Owner • Create Listing</title>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/theme.css" />
+  <link rel="stylesheet" href="/src/css/components.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/owner/dashboard.html">
+      <span class="dot"></span>
+      <span>Back</span>
+    </a>
+    <div class="topActions">
+      <a class="chip tilt" href="/tenant/index.html">
+        <span class="chipText">Tenant View</span><span class="chipIcon">🔎</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card panel reveal">
+      <div class="panelHead">
+        <div>
+          <h1 class="h1">Create Listing</h1>
+          <p class="sub">Title, description, price range, photos, and rooms (capacity + price).</p>
+        </div>
+        <button id="clearBtn" class="btn ghost tilt">Clear</button>
+      </div>
+
+      <form id="listingForm" class="form">
+        <div class="row2">
+          <label class="field">
+            <span>Title</span>
+            <input class="input" name="title" required placeholder="e.g., Skyline Boarding House" />
+          </label>
+          <label class="field">
+            <span>Area (City/Barangay)</span>
+            <input class="input" name="area" required placeholder="e.g., Cebu, Talamban" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Description</span>
+          <textarea class="textarea" name="description" rows="4" required placeholder="Rules, inclusions, vibe..."></textarea>
+        </label>
+
+        <div class="row2">
+          <label class="field">
+            <span>Min price (₱)</span>
+            <input class="input" name="minPrice" type="number" min="0" required />
+          </label>
+          <label class="field">
+            <span>Max price (₱)</span>
+            <input class="input" name="maxPrice" type="number" min="0" required />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Photos (house + rooms)</span>
+          <input class="input" id="photos" type="file" accept="image/*" multiple />
+          <small class="help">MVP stores images locally for demo. Later we upload to Supabase Storage.</small>
+        </label>
+
+        <div id="photoGrid" class="photoGrid"></div>
+
+        <div class="divider"></div>
+
+        <div class="panelHead">
+          <div>
+            <h2 class="h2">Rooms</h2>
+            <p class="sub">Room name + capacity + price (per room).</p>
+          </div>
+          <button id="addRoomBtn" class="btn secondary tilt" type="button">Add Room</button>
+        </div>
+
+        <div id="roomsWrap" class="roomsForm"></div>
+
+        <div class="actions">
+          <button class="btn primary tilt" type="submit">Save Listing</button>
+          <a class="btn ghost tilt" href="/owner/dashboard.html">Cancel</a>
+        </div>
+      </form>
+
+      <div id="toast" class="toast" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/js/owner/createListing.js"></script>
+</body>
+</html>

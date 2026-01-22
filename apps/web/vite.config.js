@@ -7,10 +7,9 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, "index.html"),
                 tenant: resolve(__dirname, "tenant/index.html"),
-                listing: resolve(__dirname, "tenant/listing.html"),
-                owner: resolve(__dirname, "owner/dashboard.html"),
-                ownerCreate: resolve(__dirname, "owner/listing-create.html")
-            }
-        }
-    }
+                owner: resolve(__dirname, "owner/index.html"),
+            },
+        },
+    },
 });
+
